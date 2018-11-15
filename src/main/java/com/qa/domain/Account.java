@@ -20,6 +20,14 @@ public class Account {
 		this.accountNumber = createdAccoutNum;
 	}
 
+	public Integer getAccountid() {
+		return accountid;
+	}
+
+	public void setAccountid(Integer accountid) {
+		this.accountid = accountid;
+	}
+
 	public String getFirstName() {
 		return firstName;
 	}
