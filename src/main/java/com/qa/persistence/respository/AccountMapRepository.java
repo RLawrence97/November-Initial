@@ -8,10 +8,12 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Map.Entry;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Alternative;
 
 import com.qa.domain.Account;
 
+@ApplicationScoped
 @Alternative
 public class AccountMapRepository implements AccountRepository{
 	
