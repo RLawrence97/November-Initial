@@ -25,14 +25,13 @@ public class App {
 		List<Account> all = repoManager.findAllAccount();
 		for (Account a: all) {
 			try {
-				sb.append(util.convertObjectToJSON(a));
+				sb.append(util.convertObjectToJSON(a) + "\n");
 			} catch (JsonProcessingException e) {
 				e.printStackTrace();
 				sb.append("{\"attempt\" : \"failed\"}");
 			}
 		}
-		String sbString = sb.toString();
-		return sbString;
+		return sb.toString();
 	}
 	
 	@GET
