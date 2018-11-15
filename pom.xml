@@ -6,6 +6,14 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
+	<profiles>
+		<profile>
+			<id>deploy</id>
+			<build>
+				<directory>C:\Users\Admin\Installed\wildfly-10.1.0.Final\standalone\deployments</directory>
+			</build>
+		</profile>
+	</profiles>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<version.jboss.bom>10.1.0.Final</version.jboss.bom>

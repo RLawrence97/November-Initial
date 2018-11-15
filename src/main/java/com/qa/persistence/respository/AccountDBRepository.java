@@ -9,6 +9,7 @@ import java.util.List;
 import javax.enterprise.inject.Default;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
 import com.qa.domain.Account;
@@ -50,8 +51,8 @@ public class AccountDBRepository implements AccountRepository {
 	public List<Account> findAllAccount() {
 		List<Account> account = new ArrayList<Account>();
 		try {
-			account.addAll(em.createQuery("Select a from Account a ORDER BY a.firstname DESC", Account.class)
-					.getResultList());
+			TypedQuery<Account> q = em.createQuery("Select a from Account a", Account.class);
+			account.addAll(q.getResultList());
 		} catch (Exception e) {
 			account.add(util.convertJSONtoObject("{\"attempt\" : \"failed\"}"));
 		} finally {

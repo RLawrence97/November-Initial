@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity
 public class Account {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer accountid;
 	@Column(length = 50)
 	private String firstName;
@@ -13,9 +13,14 @@ public class Account {
 	private String lastName;
 	@Column(length = 8)
 	private String accountNumber;
-
-	public Account(String createdFirstName, String createdLastName, String createdAccoutNum) {
+	
+	public Account() {
+		
+	}
+	
+	public Account(int createdid, String createdFirstName, String createdLastName, String createdAccoutNum) {
 		super();
+		this.accountid = createdid;
 		this.firstName = createdFirstName;
 		this.lastName = createdLastName;
 		this.accountNumber = createdAccoutNum;

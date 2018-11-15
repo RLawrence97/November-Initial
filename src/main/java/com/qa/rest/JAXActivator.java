@@ -1,5 +1,5 @@
 
-package com.qa.business;
+package com.qa.rest;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
