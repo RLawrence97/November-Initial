@@ -5,6 +5,7 @@ import javax.persistence.*;
 @Entity
 public class Account {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer accountid;
 	@Column(length = 50)
 	private String firstName;
@@ -50,6 +51,13 @@ public class Account {
 
 	public void setAccountNumber(String accountNumber) {
 		this.accountNumber = accountNumber;
+	}
+
+	public void updateAll(Account incomingAccount) {
+		this.firstName = incomingAccount.getFirstName();
+		this.lastName = incomingAccount.getLastName();
+		this.accountNumber = incomingAccount.getAccountNumber();
+		
 	}
 
 }
